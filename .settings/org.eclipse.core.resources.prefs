@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
 encoding//src/main/java/com/thrid/party/codec/demo/CmdProcess.java=UTF-8
 encoding//src/main/java/com/thrid/party/codec/demo/ProtocolAdapterImpl.java=UTF-8
 encoding//src/main/java/com/thrid/party/codec/demo/ReportProcess.java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/test/java=UTF-8
+encoding/<project>=UTF-8
