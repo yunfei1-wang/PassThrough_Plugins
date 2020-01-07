@@ -14,7 +14,6 @@ public class Utilty {
     public static final int MAX_MID_VALUE = 65535;
 
 
-    //�ֽ���תΪ�޷�������
     public int bytes2Int(byte[] b, int start, int length) {
         int sum = 0;
         int end = start + length;
@@ -26,7 +25,6 @@ public class Utilty {
         return sum;
     }
 
-    //����תΪ�ֽ���
     public byte[] int2Bytes(int value, int length) {
         byte[] b = new byte[length];
         for (int k = 0; k < length; k++) {
@@ -35,7 +33,6 @@ public class Utilty {
         return b;
     }
 
-    //�ж�mid�Ƿ���Ч
     public boolean isValidofMid(int mId) {
         if (mId < MIN_MID_VALUE || mId > MAX_MID_VALUE) {
             return false;
@@ -43,9 +40,6 @@ public class Utilty {
         return true;
     }
 
-    /***
-     * ���ֽ���ת��Ϊ16�����ַ���
-     */
     public static String parseByte2HexStr(byte[] buf) {
         if (null == buf) {
             return null;

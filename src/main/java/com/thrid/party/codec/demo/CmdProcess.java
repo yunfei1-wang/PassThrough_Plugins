@@ -24,23 +24,20 @@ public class CmdProcess {
             // this.identifier = input.get("identifier").asText();
             this.msgType = input.get("msgType").asText();
             /*
-            骞冲彴鏀跺埌璁惧涓婃姤娑堟伅锛岀紪鐮丄CK
             {
                 "identifier":"0",
                 "msgType":"cloudRsp",
-                "request": ***,//璁惧涓婃姤鐨勭爜娴�
+                "request": ***,
                 "errcode":0,
                 "hasMore":0
             }
             * */
             if (msgType.equals("cloudRsp")) {
-                //鍦ㄦ缁勮ACK鐨勫��
                 this.errcode = input.get("errcode").asInt();
                 this.hasMore = input.get("hasMore").asInt();
             }
             else {
             /*
-            骞冲彴涓嬪彂鍛戒护鍒拌澶囷紝杈撳叆
             {
                 "identifier":0,
                 "msgType":"cloudReq",
@@ -52,7 +49,6 @@ public class CmdProcess {
 
             }
             * */
-                //姝ゅ闇�瑕佽�冭檻鍏煎鎬э紝濡傛灉娌℃湁浼爉Id锛屽垯涓嶅鍏惰繘琛岀紪鐮�
 
                 if (input.get("mid") != null) {
                     this.mid = input.get("mid").intValue();
@@ -71,10 +67,6 @@ public class CmdProcess {
     public byte[] toByte() {
         try {
             if (this.msgType.equals("cloudReq")) {
-                /*
-                搴旂敤鏈嶅姟鍣ㄤ笅鍙戠殑鎺у埗鍛戒护锛屾湰渚嬪彧鏈変竴鏉℃帶鍒跺懡浠わ細SET_DEVICE_LEVEL
-                濡傛灉鏈夊叾浠栨帶鍒跺懡浠わ紝澧炲姞鍒ゆ柇鍗冲彲銆�
-                * */
                 if (this.cmd.equals("COMMAND")) {
                     String str = paras.get("value").asText();
                     
@@ -85,9 +77,8 @@ public class CmdProcess {
                     //byteRead[1] = (byte) 0x04;
                     //byteRead[2] = (byte) meterStaus;
 
-                    //姝ゅ闇�瑕佽�冭檻鍏煎鎬э紝濡傛灉娌℃湁浼爉Id锛屽垯涓嶅鍏惰繘琛岀紪鐮�
                     if (Utilty.getInstance().isValidofMid(mid)) {
-                    	//是不是数组需要这样写，单个字节不需要？
+
                         byte[] byteMid = new byte[2];
                         byteMid = Utilty.getInstance().int2Bytes(mid, 2);
                         //byteRead[3] = byteMid[0];
@@ -99,9 +90,6 @@ public class CmdProcess {
 
             }
 
-            /*
-            骞冲彴鏀跺埌璁惧鐨勪笂鎶ユ暟鎹紝鏍规嵁闇�瑕佺紪鐮丄CK锛屽璁惧杩涜鍝嶅簲锛屽鏋滄澶勮繑鍥瀗ull锛岃〃绀轰笉闇�瑕佸璁惧鍝嶅簲銆�
-            * */
             else if (this.msgType.equals("cloudRsp")) {
                 byte[] ack = new byte[4];
                 ack[0] = (byte) 0xCC;

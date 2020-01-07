@@ -9,9 +9,9 @@ import com.huawei.m2m.cig.tup.modules.protocol_adapter.IProtocolAdapter;
 public class ProtocolAdapterImpl implements IProtocolAdapter {
 
     private static final Logger logger = LoggerFactory.getLogger(ProtocolAdapterImpl.class);
-    // 鍘傚晢鍚嶇О
+
     private static final String MANU_FACTURERID = "TestPlug";
-    // 璁惧鍨嬪彿
+    
     private static final String MODEL = "T001";
 
     @Override
