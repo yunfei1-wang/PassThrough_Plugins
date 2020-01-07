@@ -1,0 +1,29 @@
+{
+    "devices": [
+        {
+            "manufacturerName": "TestPlug",
+            "manufacturerId": "TestPlug",
+            "model": "T001",
+            "protocolType": "CoAP",
+            "deviceType": "TEST",
+            "serviceTypeCapabilities": [
+                {
+                    "serviceId": "Connectivity",
+                    "serviceType": "Connectivity",
+                    "option": "Mandatory"
+                },
+                {
+                    "serviceId": "SystemCmdRawData",
+                    "serviceType": "SystemCmdRawData",
+                    "option": "Master"
+                },
+                {
+                    "serviceId": "Location",
+                    "serviceType": "Location",
+                    "option": "Mandatory"
+                }
+            ],
+            "omCapability": null
+        }
+    ]
+}
